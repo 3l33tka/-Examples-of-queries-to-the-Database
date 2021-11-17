@@ -13,7 +13,8 @@ SET [Производитель] = convert(XML,
  = [dbo].[ТоварыВдоговорах].[Код товара]
   FOR XML PATH('Info'), ELEMENTS))
   
-  **Выполняется добавление производителей в таблицу [Товары]**
+
+**Выполняется добавление производителей в таблицу [Товары]**
 
 UPDATE Товары
 SET Производитель.modify('replace value of 
@@ -21,13 +22,11 @@ SET Производитель.modify('replace value of
 with ( "Россия" )')
 WHERE [Товары].[Код товара] in (1,6,7,8,9,10)
 
-
 UPDATE Товары
 SET Производитель.modify('replace value of 
 (/Info/@Company)[1]
 with ( "ООО Рашаday" )')
 WHERE [Товары].[Код товара] in (1,6,7,8,9,10)
-
 
 UPDATE Товары
 SET Производитель.modify('replace value of 
