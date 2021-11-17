@@ -1,1 +1,1 @@
-# -Examples-of-queries-to-the-Database
+# Примеры запросов к БД "Торговля"
